@@ -1,0 +1,23 @@
+---
+import "../styles/postSection.css"
+import PostComponent from "../components/PostComponent.astro"
+const datas = await fetch('https://hamanie.news/wp-json/wp/v2/posts?_embed')
+const posts = await datas.json()
+---
+<section class="recent-posts">
+
+ <div class="container">
+
+   <h2 class="section-title">Articles récents</h2>
+
+   <div class="posts-grid">
+    {
+     posts.map((post) => (
+       <PostComponent item={post}/>
+     ))
+   }
+   </div>
+
+ </div>
+
+</section>

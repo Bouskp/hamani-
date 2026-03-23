@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets"
+import "../styles/footer.css"
+import logo from "../assets/images/logo.jpg"
+---
+<footer class="footer">
+ <div class="footer-container">
+   <!-- LOGO + DESCRIPTION -->
+   <div class="footer-col">
+     <div class="img"><Image src={logo} alt="le logo de Hamaniè"/></div>
+     <p>
+       Hamaniè incarne l’élégance et l’authenticité à travers des créations
+       inspirées de la richesse culturelle africaine.
+     </p>
+   </div>
+
+   <!-- LIENS -->
+   <div class="footer-col">
+     <h3>Navigation</h3>
+     <ul>
+       <li><a href="#">Accueil</a></li>
+       <li><a href="#">Collections</a></li>
+       <li><a href="#">À propos</a></li>
+       <li><a href="#">Contact</a></li>
+     </ul>
+   </div>
+
+   <!-- CONTACT -->
+   <div class="footer-col">
+     <h3>Contact</h3>
+     <p>Email : contact@hamanie.com</p>
+     <p>Téléphone : +225 07 00 00 00 00</p>
+     <p>Abidjan, Côte d'Ivoire</p>
+   </div>
+
+   <!-- NEWSLETTER -->
+   <div class="footer-col">
+     <h3>Newsletter</h3>
+     <p>Recevez nos nouveautés et offres exclusives</p>
+
+     <form class="newsletter-form">
+       <input type="email" placeholder="Votre email" required>
+       <button type="submit">S’inscrire</button>
+     </form>
+   </div>
+
+ </div>
+
+ <!-- RÉSEAUX SOCIAUX -->
+ <div class="footer-socials">
+   <a href="https://www.facebook.com/hamanienews/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+   <a href="https://www.instagram.com/hamanie.news/" target="_blank"><i class="fab fa-instagram"></i></a>
+   <a href="https://www.linkedin.com/company/hamani%C3%A8?trk=public_post_feed-actor-name" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+ </div>
+
+ <!-- COPYRIGHT -->
+ <div class="footer-bottom">
+   <p>© 2026 MIAN MEDIA — Tous droits réservés</p>
+ </div>
+</footer>

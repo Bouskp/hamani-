@@ -1,0 +1,53 @@
+---
+ import "../styles/featuredSection.css"
+
+ const response = await fetch(import.meta.env.CF_LINK)
+ const data = await response.json()
+ const {lien_:lien, image : imageId, numero_magazine:numMag} = data[0].acf
+ const image = await fetch(`${import.meta.env.MEDIA_LINK}${imageId}`)
+ const imageData = await image.json()
+ const {sizes} = imageData.media_details
+---
+<section class="featured-magazine section">
+ <div class="container">
+
+   <h2 class="section-title">hamaniè magazine</h2>
+
+   <div class="featured-content">
+
+     <!-- IMAGE -->
+     <div class="featured-image">
+       <img src={sizes.td_324x400.source_url} alt={`Hamaniè #${numMag}`}>
+     </div>
+
+     <!-- TEXTE -->
+     <div class="featured-text">
+
+       <span class="tag">{`Hamaniè #${numMag}`}</span>
+
+       <h3>
+         l'hebdomadaire des leaders et décideurs qui façonnent l'afrique
+       </h3>
+
+       <p>
+         Dans cette édition, Hamaniè magazine explore les dynamiques de transformation 
+         en Afrique à travers des parcours inspirants, des analyses stratégiques 
+         et des récits culturels forts.
+       </p>
+
+       <!-- <ul>
+         <li>👉 Arnaud N’Goran & Roland Serge M’Bolo</li>
+         <li>👉 Communication & pouvoir en Côte d’Ivoire</li>
+         <li>👉 Culture, mémoire & identité</li>
+         <li>👉 Gastronomie africaine & innovation</li>
+       </ul> -->
+
+       <a href={lien} target="_blank" class="btn">Lire le magazine</a>
+
+     </div>
+
+   </div>
+
+ </div>
+
+</section>

@@ -1,0 +1,60 @@
+---
+import "../styles/miantvsection.css"
+
+import {videos} from "../utils/getCategories"
+---
+
+<section class="mian-tv">
+
+ <div class="container">
+
+   <h2 class="section-title">Mian TV</h2>
+   <p class="section-subtitle">
+     Interviews, analyses et contenus exclusifs pour comprendre l’Afrique en mouvement.
+   </p>
+
+   <div class="tv-grid">
+
+     <!-- VIDEO PRINCIPALE -->
+     <div class="main-video">
+      <iframe width="1351" height="480" src=`https://www.youtube.com/embed/PlCMZhG5MfI`  title="Points de Vue - L&#39;entretien Ep 1 avec Fabrice Lago"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+     </div>
+
+     <!-- LISTE VIDEOS -->
+     <div class="video-list">
+      {
+       videos.map((video) => (
+       <div class="video-item" data-video={`${video.id}`}>
+         <img src={`https://i.ytimg.com/vi/${video.id}/sddefault.jpg`} alt={video.desc}>
+         <p set:html={video.desc}/>
+       </div>
+       ))
+       }
+
+<script>
+ const videos = document.querySelectorAll('.video-item')
+ const iframe = document.querySelector('.main-video iframe')
+
+ videos.forEach(item => {
+  item.addEventListener("click", e => {
+   iframe.src = `https://www.youtube.com/embed/${item.dataset.video}`
+  }, true)
+ })
+</script>
+     
+
+       
+
+      
+
+       
+
+       
+
+     </div>
+
+   </div>
+
+ </div>
+
+</section>

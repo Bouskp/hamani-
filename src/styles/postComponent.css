@@ -1,0 +1,25 @@
+.indications {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sports {
+  background-color: var(--sport-color);
+}
+
+.economie {
+  background-color: var(--economie-color);
+}
+
+.politique {
+  background-color: var(--politique-color);
+}
+
+.societe {
+  background-color: var(--societe-color);
+}
+
+.culturestyle {
+  background-color: var(--culturestyle-color);
+}

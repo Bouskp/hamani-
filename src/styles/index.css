@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  color: inherit;
+}
+
+:root {
+  /* Colors */
+  --primary-color: red;
+  --secondary-color: yellow;
+  --tertiary-color: #f59e0b;
+  --bg-color: #f8fafc;
+  --black: #000;
+  --white: #fff;
+
+  --sport-color: red;
+  --politique-color: indigo;
+  --economie-color: green;
+  --societe-color: yellowgreen;
+  --culturestyle--color: blue;
+
+  /* Sizing */
+  font-size: 62.5%;
+  --big-sizing: 4rem;
+  --normal-sizing: 1.8rem;
+  --h1-sizing: 3rem;
+  --h2-sizing: 2.5rem;
+  --h3-sizing: 1.6rem;
+  --section-title: 4rem;
+}
+
+img,
+video,
+picture {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1150px;
+}
+
+section {
+  padding: 6rem 2rem 2rem;
+}
+
+body {
+  font-size: var(--normal-sizing);
+}
