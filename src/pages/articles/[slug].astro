@@ -3,8 +3,14 @@
 const {slug} = Astro.params
 console.log(slug)
 
-export async function getStaticPath() {
- 
+export async function getStaticPaths() {
+  let data = await fetch("https://norian.studio/wp-json/wp/v2/dinos");
+  let posts = await data.json();
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post: post },
+  }));
 }
 ---
 
