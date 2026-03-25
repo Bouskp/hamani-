@@ -9,6 +9,9 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^6.0.5"
+    "astro": "^6.0.5",
+    "pdfjs-dist": "^5.5.207",
+    "turn.js": "^1.0.5",
+    "jquery": "1.12.0"
   }
 }
