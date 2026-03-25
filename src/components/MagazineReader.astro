@@ -53,7 +53,7 @@ const pdfUrl = "/magazine.pdf";
         const viewport = page.getViewport({ scale: 2 });
 
         canvas.width=viewport.width;
-        canvas.height=isMobile ? 400 : viewport.height;
+        canvas.height=isMobile ? 600 : viewport.height;
 
         page.render({
           canvasContext: context,
