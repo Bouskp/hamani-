@@ -32,14 +32,13 @@ const pdfUrl = "/magazine.pdf";
 
   $("#flipbook").turn({
     width: isMobile ? window.innerWidth : 900,
-    height: isMobile ? window.innerHeight * 0.8 : 600,
+    height: isMobile ? window.innerHeight * 1.3 : 600,
     autoCenter: true,
     display: isMobile ? "single" : "double"
   });
 }
 
   pdfjsLib.getDocument(url).promise.then(pdf => {
-    const isMobile = window.innerWidth < 768;
 
     for (let i = 1; i <= pdf.numPages; i++) {
 
@@ -52,8 +51,8 @@ const pdfUrl = "/magazine.pdf";
 
         const viewport = page.getViewport({ scale: 2 });
 
-        canvas.width=viewport.width;
-        canvas.height=isMobile ? 600 : viewport.height;
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
 
         page.render({
           canvasContext: context,
@@ -144,7 +143,7 @@ const pdfUrl = "/magazine.pdf";
 @media(max-width:768px){
   #flipbook{
     width:100%;
-    height:800px;
+    height:100%;
   }
 
 
