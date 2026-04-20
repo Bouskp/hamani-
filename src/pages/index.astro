@@ -1,19 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro"
-import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
 import FeaturedSection from "../components/FeaturedSection.astro"
 import PostSection from "../components/PostSection.astro"
 import MianTvSection from "../components/MianTvSection.astro"
 import ContactSection from "../components/ContactSection.astro"
-import MagazineReader from "../components/MagazineReader.astro"
+import Navbar from "../components/Navbar.astro"
+
 ---
 <Layout>
- <Header slot="header"/>
+ <Navbar slot="navbar"/>
  <FeaturedSection />
  <PostSection/>
  <MianTvSection/>
  <ContactSection/>
- <MagazineReader/>
  <Footer slot="footer"/>
 </Layout>

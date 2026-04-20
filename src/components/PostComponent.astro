@@ -14,9 +14,10 @@ const image = item["yoast_head_json"]["og_image"][0].url
   <div class="indications">
    <p class="date">{formaterDateLong(new Date(item.date_gmt))}</p>
    <p class=`taxynomie ${categories[item.categories[0]]}`>{categories[item.categories[0]]}</p>
-
+   
   </div>
-   <h3>{item.yoast_head_json.title}</p>
- </div>
+  <h3>{item.yoast_head_json.title.replace("- Hamanie", "")}</p>
+  </div>
+  <p set:html={item.excerpt.rendered.trim()} />
 </a>
 </article>

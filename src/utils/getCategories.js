@@ -24,3 +24,12 @@ export const videos = [
     desc: 'AgroMakers Ep 02 - Les réalités de la transformation locale - Axel Emmanuel, le Chocolatier Ivoirien',
   },
 ]
+
+export function getFonts(first, second, root = 10) {
+  const v = (100 * (second.y - first.y)) / (second.x - first.x)
+  const r = (first.x * second.y - second.x * first.y) / (first.x - second.x)
+  return {
+    v,
+    r: r / 10,
+  }
+}

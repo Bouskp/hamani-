@@ -1,23 +1,32 @@
 ---
 import "../styles/postSection.css"
 import PostComponent from "../components/PostComponent.astro"
-const datas = await fetch('https://hamanie.news/wp-json/wp/v2/posts?_embed')
+const datas = await fetch('https://hamanie.news/wp-json/wp/v2/posts?_embed&per_page=10')
 const posts = await datas.json()
+const featuredPosts = posts.slice(0,3)
+const reste = posts.slice(3, posts.length)
+
 ---
 <section class="recent-posts">
-
  <div class="container">
-
-   <h2 class="section-title">Articles récents</h2>
-
+   <h2 class="section-title">A la une</h2>
    <div class="posts-grid">
-    {
-     posts.map((post) => (
-       <PostComponent item={post}/>
-     ))
-   }
+    <div class="featured-posts">
+      {
+        featuredPosts.map((post) => (
+          <PostComponent item={post}/>
+        ))
+      }
+    </div>
+    <div class="others-posts">
+      {
+        reste.map((post) => (
+          <PostComponent item={post}/>
+        ))
+      }
+    </div>
    </div>
-
+  </div>
  </div>
 
 </section>

@@ -8,7 +8,16 @@ import { Fragment } from "astro/jsx-runtime"
  <div class="navbar">
   <div class="logo">
    <a href="/"><Image src={logo} alt="logo du site"/></a>
+   <div class="icons">
+    <span id="open">
+     <i class="fa-solid fa-bars"></i>
+    </span>
+    <span>
+     <i class="fa-solid fa-magnifying-glass"></i>
+    </span>
+   </div>
   </div>
+  <div class="nav-list">
   <nav>
    <ul class="list">
     <li><a href="/">Accueil</a></li>
@@ -17,38 +26,30 @@ import { Fragment } from "astro/jsx-runtime"
     <li><a href="/societe">Société</a></li>
     <li><a href="/culture">Culture & Style</a></li>
     <li><a href="/sports">Sports</a></li>
-    <span id="close">
-     <i class="fa-solid fa-x"></i>
-    </span>
+    <li><a href="/magazine">Magazines</a></li>
+    
    </ul>
   </nav>
-  <div class="icons">
-   <span id="open">
-    <i class="fa-solid fa-bars"></i>
-   </span>
-   
-   <span>
-    <i class="fa-solid fa-magnifying-glass"></i>
-   </span>
-  </div>
+ </div>
  </div>
  
  
 
-<script>
- const close = document.querySelector('#close')
- const open = document.querySelector('#open')
- const nav = document.querySelector('nav')
+ <script>
+  const navList = document.querySelector('.nav-list')
+  const open = document.querySelector('#open')
+  console.log(navList)
 
+  window.onscroll = (e)=> {
+   if(window.pageYOffset > 135) {
+    navList.classList.add("sticky")
+   } else {
+    navList.classList.remove('sticky')
+   }
+  }
 
- open.addEventListener('click', ()=> {
-  nav.classList.add('close')
- })
+  open.addEventListener('click', (e)=> {
+   navList.classList.toggle('open')
+  })
+ </script>
 
-
- close.addEventListener('click', ()=> {
-  console.log("Bonjour madame")
-  nav.classList.remove('close')
- })
-
-</script>

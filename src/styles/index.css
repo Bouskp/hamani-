@@ -9,10 +9,11 @@
 
 :root {
   /* Colors */
-  --primary-color: red;
-  --secondary-color: yellow;
-  --tertiary-color: #f59e0b;
-  --bg-color: #f8fafc;
+  --primary-color: #001d44;
+  --secondary-color: #442700;
+  --tertiary-color: #3f4400;
+  --bg-color: #f1f5f9;
+  --second-bg-color: #0f172a;
   --black: #000;
   --white: #fff;
 
@@ -24,12 +25,24 @@
 
   /* Sizing */
   font-size: 62.5%;
-  --big-sizing: 4rem;
-  --normal-sizing: 1.8rem;
-  --h1-sizing: 3rem;
-  --h2-sizing: 2.5rem;
-  --h3-sizing: 1.6rem;
-  --section-title: 4rem;
+  --big-sizing: clamp(
+    3.2rem,
+    1.7208413001912046vw + 2.6493307839388143rem,
+    5rem
+  );
+  --normal-sizing: clamp(
+    1.4rem,
+    0.5736137667304015vw + 1.2164435946462715rem,
+    2rem
+  );
+  --h1-sizing: clamp(2.6rem, 1.338432122370937vw + 2.1717017208413rem, 4rem);
+  --h2-sizing: clamp(2rem, 1.338432122370937vw + 1.5717017208413002rem, 3.4rem);
+  --h3-sizing: clamp(1.6rem, 1.338432122370937vw + 1.1717017208413003rem, 3rem);
+  --section-title: clamp(
+    1.8rem,
+    0.3824091778202677vw + 1.6776290630975144rem,
+    2.2rem
+  );
 }
 
 img,
@@ -48,7 +61,7 @@ canvas {
 
 .container {
   margin: 0 auto;
-  max-width: 1150px;
+  max-width: 1200px;
 }
 
 section {
@@ -56,5 +69,5 @@ section {
 }
 
 body {
-  font-size: var(--normal-sizing);
+  font-size: 1.6rem;
 }
