@@ -1,5 +1,7 @@
 ---
- import "../styles/featuredSection.css"
+import { Image } from "astro:assets"
+import "../styles/featuredSection.css"
+
 
  const response = await fetch(import.meta.env.CF_LINK)
  const data = await response.json()
@@ -12,15 +14,19 @@
  <div class="container">
 
   <div class="section-title">
+    <a href="/magazine" title="voir plus de magazines" class="group-title">
     <h2 class="section-title-text">hamaniè magazine</h2>
-    <a href="/Magazine" class="btn">+ Mags Hamaniè</a>
+    <span>
+      <i class="fa-solid fa-angle-right"></i>
+    </span>
+    </a>
   </div>
 
    <div class="featured-content">
 
      <!-- IMAGE -->
      <div class="featured-image">
-       <img src={sizes?.full?.source_url} alt={`Hamaniè #${numMag}`}>
+       <Image src={sizes?.large?.source_url} alt={`Hamaniè #${numMag}` } width={724} height={724}>
      </div>
 
      <!-- TEXTE -->

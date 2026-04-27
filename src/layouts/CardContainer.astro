@@ -1,0 +1,21 @@
+---
+import "../styles/cardContainer.css"
+import { getDate } from "../utils/getCategories"
+const {posts} = Astro.props
+---
+
+<div class="full__container">
+ <div class="cards__container">
+  {posts.map((post) => (
+ <a href={`/articles/${post.slug}`}>
+  <div class="img">
+  <img src={post._embedded?.["wp:featuredmedia"]?.[0]?.source_url} alt={post.title.rendered}>
+  </div>
+  <div class="content">
+    <span class="date">{getDate(new Date(post.date_gmt))}</span>
+    <p set:html={post.title.rendered}/>
+ </div>
+ 
+ </a>
+))}
+</div>

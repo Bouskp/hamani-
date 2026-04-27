@@ -3,34 +3,68 @@
   background: var(--bg-color);
 }
 
-.featured-magazine .section-title {
+.featured-magazine .group-title {
+  font-size: var(--big-sizing);
+  text-transform: capitalize;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 
-  .section-title-text {
-    font-size: var(--h1-sizing);
-    text-transform: capitalize;
+  span {
+    transition: all 0.5s ease;
+    transform: scale(1);
   }
 
-  .btn {
-    font-size: var(--normal-sizing);
+  &:hover {
+    span {
+      transform: scale(1.2) translateX(5px);
+    }
   }
 }
 
 .featured-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  grid-auto-rows: auto;
+  gap: 2rem;
   align-items: start;
   font-size: var(--normal-sizing);
+}
+
+.section-rubrique {
+  .group-title {
+    font-size: var(--h1-sizing);
+    text-transform: capitalize;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+      transition: all 0.5s ease;
+      transform: scale(1);
+    }
+
+    &:hover {
+      span {
+        transform: scale(1.2) translateX(5px);
+      }
+    }
+  }
+
+  .scroll-button {
+    font-size: var(--h3-sizing);
+    white-space: nowrap;
+
+    i {
+      cursor: pointer;
+    }
+  }
 }
 
 /* IMAGE */
 
 .featured-image img {
-  width: 100%;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
@@ -38,22 +72,23 @@
 /* TEXTE */
 
 .featured-text {
+  padding-top: 3rem;
 }
 
 .featured-text .tag {
   color: var(--tertiary-color);
   font-weight: bold;
-  font-size: var(--h3-sizing);
+  font-size: var(--h2-sizing);
 }
 
 .featured-text h3 {
-  font-size: var(--h3-sizing);
   margin: 15px 0;
 }
 
 .featured-text p {
   color: #475569;
   margin-bottom: 15px;
+  font-size: var(--normal-sizing);
 }
 
 .featured-text ul {
@@ -90,14 +125,5 @@
   .featured-magazine {
     padding: 80px 20px;
     background: var(--bg-color);
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .featured-magazine .section-title {
-    justify-content: center;
-    .btn {
-      display: none;
-    }
   }
 }

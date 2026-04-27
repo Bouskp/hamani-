@@ -33,3 +33,18 @@ export function getFonts(first, second, root = 10) {
     r: r / 10,
   }
 }
+
+export function getDate(date) {
+  const now = Date.now()
+  const diffMs = Math.abs(now - date)
+
+  const minutes = Math.floor(diffMs / (1000 * 60))
+  const hours = Math.floor(diffMs / (1000 * 60 * 60))
+  const days = Math.floor(diffMs / (1000 * 60 * 60 * 24))
+  const months = Math.floor(diffMs / (1000 * 60 * 60 * 24 * 30))
+
+  if (days > 30) return `il y'a ${months} mois`
+  if (days == 0) return `il y'a ${hours} heure${hours > 1 ? 's' : ''}`
+  if (hours == 0) return `il y'a ${minutes} minute${minutes > 1 ? 's' : ''}`
+  return `il y'a ${days} jour${days > 1 ? 's' : ''}`
+}

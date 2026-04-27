@@ -1,0 +1,22 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+
+export async function getStaticPaths() {
+return [
+ {params: {slug: "politique"}},
+ {params: {slug: "economie"}},
+ {params: {slug: "societe"}},
+ {params: {slug: "culture-art-de-vivre"}},
+ {params: {slug: "sports"}},
+]
+}
+
+const {slug} = Astro.params
+
+---
+<Layout>
+ <div class="container">
+  <h1>{slug}</h1>
+ </div>
+</Layout>

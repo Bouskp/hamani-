@@ -3,25 +3,27 @@
   align-items: center;
   justify-content: space-between;
   font-size: var(--normal-sizing);
-  margin-block: 1.5rem;
+  padding-block: 1rem;
+  font-style: oblique;
+  text-transform: capitalize;
 }
 
-.sports {
-  background-color: var(--sport-color);
+span.sports {
+  color: var(--sport-color);
 }
 
-.economie {
-  background-color: var(--economie-color);
+span.economie {
+  color: var(--economie-color);
 }
 
-.politique {
-  background-color: var(--politique-color);
+span.politique {
+  color: var(--politique-color);
 }
 
-.societe {
-  background-color: var(--societe-color);
+span.societe {
+  color: var(--societe-color);
 }
 
-.culturestyle {
-  background-color: var(--culturestyle-color);
+span.culturestyle {
+  color: var(--culturestyle-color);
 }

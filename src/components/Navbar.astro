@@ -21,13 +21,13 @@ import { Fragment } from "astro/jsx-runtime"
   <nav>
    <ul class="list">
     <li><a href="/">Accueil</a></li>
-    <li><a href="/politique">Politique</a></li>
-    <li><a href="/economie">Economie</a></li>
-    <li><a href="/societe">Société</a></li>
-    <li><a href="/culture">Culture & Style</a></li>
-    <li><a href="/sports">Sports</a></li>
+    <li><a href="/rubriques/politique">Politique</a></li>
+    <li><a href="/rubriques/economie">Economie</a></li>
+    <li><a href="/rubriques/societe">Société</a></li>
+    <li><a href="/rubriques/culture">Culture & Style</a></li>
+    <li><a href="/rubriques/sports">Sports</a></li>
     <li><a href="/magazine">Magazines</a></li>
-    
+    <li><a href="/miantv">Mian TV</a></li>
    </ul>
   </nav>
  </div>
@@ -38,7 +38,6 @@ import { Fragment } from "astro/jsx-runtime"
  <script>
   const navList = document.querySelector('.nav-list')
   const open = document.querySelector('#open')
-  console.log(navList)
 
   window.onscroll = (e)=> {
    if(window.pageYOffset > 135) {

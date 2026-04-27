@@ -1,0 +1,65 @@
+---
+import CardContainer from "../layouts/CardContainer.astro"
+import ScrollLayout from "../layouts/ScrollLayout.astro"
+import SecondCard from "../layouts/SecondCard.astro"
+import SnappLayout from "../layouts/SnappLayout.astro"
+
+const {name, type="card__container", category=72} = Astro.props
+
+const data = await fetch(`https://hamanie.news/wp-json/wp/v2/posts?categories=${category}&_embed`)
+const posts = await data.json()
+---
+
+<section class="section-rubrique">
+ <div class="container">
+  <div class="section-title">
+    <a href=`/rubriques/${name}` class="group-title" title="voir plus">
+    <h2>{name}</h2>
+    <span>
+      <i class="fa-solid fa-angle-right"></i>
+    </span>
+    </a>
+    {type == "scroll-snap" ? <div class="scroll-button">
+      <span class="left"><i class="fa-solid fa-angle-left"></i></span>
+      <span class="right"><i class="fa-solid fa-angle-right"></i></span>
+      </div> : "" }
+  </div>
+  {type == "card__container" ? <CardContainer posts={posts}/> : (type == "scroll-snap" ? <ScrollLayout posts={posts}/>:(type == "second-card" ? <SecondCard posts={posts}/> : <SnappLayout posts={posts}/> ))}
+ </div>
+</section>
+
+
+<script>
+  
+  try {
+    const next = document.querySelector('span.right')
+    const prev = document.querySelector('span.left')
+    const slider = document.querySelector('.scroll-snap')
+    const items = document.querySelectorAll('.scroll-snap a')
+    let index = 0
+
+    function scrollToIndex(i) {
+  slider.scrollTo({
+    left: items[i].offsetLeft,
+    behavior: "smooth"
+  });
+}
+    
+    next.addEventListener("click", (e)=> {
+      console.log('click next')
+        index = Math.min(index + 1, items.length - 1);
+              scrollToIndex(index);
+      
+    })
+    prev.addEventListener("click", (e)=> {
+      console.log("click prev")
+      index = Math.max(index - 1, 0);
+            scrollToIndex(index);
+      
+    })
+    
+  } catch (error) {
+    
+  }
+</script>
+

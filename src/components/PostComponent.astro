@@ -1,6 +1,6 @@
 ---
 import "../styles/postComponent.css"
-import {categories, formaterDateLong} from "../utils/getCategories.js"
+import {categories, formaterDateLong, getDate} from "../utils/getCategories.js"
 const {item} = Astro.props
 
 const image = item["yoast_head_json"]["og_image"][0].url
@@ -9,15 +9,17 @@ const image = item["yoast_head_json"]["og_image"][0].url
 
 <article class="post-card">
  <a href=`/articles/${item.slug}`>
-  <img src={image} alt="post image">
+  <div class="img">
+    <img src={image} alt="post image">
+  </div>
  <div class="post-content">
   <div class="indications">
-   <p class="date">{formaterDateLong(new Date(item.date_gmt))}</p>
-   <p class=`taxynomie ${categories[item.categories[0]]}`>{categories[item.categories[0]]}</p>
-   
-  </div>
-  <h3>{item.yoast_head_json.title.replace("- Hamanie", "")}</p>
-  </div>
+    <span class="date">{getDate(new Date(item.date_gmt))}</span>
+    <span class=`taxynomie ${categories[item.categories[0]]}`>{categories[item.categories[0]]}</span>
+   </div>
+  <h3>{item.yoast_head_json.title.replace("- Hamanie", "")}</h3>
   <p set:html={item.excerpt.rendered.trim()} />
+  
+  </div>
 </a>
 </article>

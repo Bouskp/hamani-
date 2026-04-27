@@ -1,10 +1,15 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*,
+::after,
+::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
   color: inherit;
+  outline: none;
 }
 
 :root {
@@ -25,24 +30,34 @@
 
   /* Sizing */
   font-size: 62.5%;
+
   --big-sizing: clamp(
-    3.2rem,
-    1.7208413001912046vw + 2.6493307839388143rem,
-    5rem
-  );
-  --normal-sizing: clamp(
-    1.4rem,
-    0.5736137667304015vw + 1.2164435946462715rem,
-    2rem
-  );
-  --h1-sizing: clamp(2.6rem, 1.338432122370937vw + 2.1717017208413rem, 4rem);
-  --h2-sizing: clamp(2rem, 1.338432122370937vw + 1.5717017208413002rem, 3.4rem);
-  --h3-sizing: clamp(1.6rem, 1.338432122370937vw + 1.1717017208413003rem, 3rem);
-  --section-title: clamp(
     1.8rem,
-    0.3824091778202677vw + 1.6776290630975144rem,
+    0.45454545454545453vw + 1.6545454545454548rem,
     2.2rem
   );
+
+  --h1-sizing: clamp(
+    1.6rem,
+    0.22727272727272727vw + 1.5272727272727273rem,
+    1.8rem
+  );
+  --h2-sizing: clamp(
+    1.4rem,
+    0.3409090909090909vw + 1.2909090909090908rem,
+    1.7rem
+  );
+  --h3-sizing: clamp(1.6rem, 1.338432122370937vw + 1.1717017208413003rem, 3rem);
+
+  --normal-sizing: clamp(
+    1.1rem,
+    0.22727272727272727vw + 1.0272727272727273rem,
+    1.3rem
+  );
+
+  /* fonts */
+  --font1: 'Roboto', sans-serif;
+  --font2: 'Merriweather', serif;
 }
 
 img,
@@ -51,6 +66,7 @@ picture {
   max-width: 100%;
   height: auto;
   object-fit: cover;
+  border-radius: inherit;
 }
 
 canvas {
@@ -66,8 +82,46 @@ canvas {
 
 section {
   padding: 6rem 2rem 2rem;
+  background-color: inherit;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 body {
   font-size: 1.6rem;
+  font-family: var(--font2);
+  line-height: 1.6;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  font-family: var(--font2);
+  font-size: var(--h1-sizing);
+
+  h2 {
+    text-transform: uppercase;
+    font-size: var(--h2-sizing);
+    white-space: nowrap;
+  }
+
+  .btn {
+    text-transform: uppercase;
+    font-size: var(--normal-sizing);
+    padding: 10px 20px;
+    color: #333;
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: var(--primary-color);
+      color: var(--white);
+    }
+  }
 }

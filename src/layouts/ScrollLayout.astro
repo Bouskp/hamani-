@@ -1,0 +1,13 @@
+---
+import "../styles/cardContainer.css"
+const {posts} = Astro.props
+---
+
+<div class="scroll">
+ <div class="scroll-snap">
+  {posts.map((post) => (
+   <a href={`/articles/${post.slug}`}>
+    <img src={post._embedded?.["wp:featuredmedia"]?.[0]?.source_url} alt={post.title.rendered}>
+    <p set:html={post.title.rendered}/>
+   </a>
+  ))}

@@ -1,18 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro"
-import Footer from "../components/Footer.astro"
 import FeaturedSection from "../components/FeaturedSection.astro"
 import PostSection from "../components/PostSection.astro"
 import MianTvSection from "../components/MianTvSection.astro"
 import ContactSection from "../components/ContactSection.astro"
-import Navbar from "../components/Navbar.astro"
+import Section from "../components/Section.astro"
 
 ---
 <Layout>
- <Navbar slot="navbar"/>
  <FeaturedSection />
  <PostSection/>
+ <Section name="politique" type="card__container"/>
+ <Section name="economie" type="SnappLayout" category="68"/>
+ <Section name="societe" type="scroll-snap" category="74"/>
+ <Section name="culture-art-de-vivre"  type="second-card" category="70" />
+ <Section name="sport"  type="scroll-snap" category="76" />
  <MianTvSection/>
  <ContactSection/>
- <Footer slot="footer"/>
 </Layout>
